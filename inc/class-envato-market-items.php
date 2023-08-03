@@ -515,7 +515,7 @@ if ( ! class_exists( 'Envato_Market_Items' ) ) :
 					$author   = $theme->get( 'Author' );
 
 					foreach ( $install as $key => $value ) {
-						if ( $this->normalize( $value['name'] ) === $this->normalize( $title ) && $this->normalize( $value['author'] ) === $this->normalize( $author ) ) {
+						if ( $this->normalize( $value['name'] ) === $this->normalize( $title ) && ($this->normalize( $value['author'] ) === $this->normalize( $author ) || 'themovation' === $this->normalize( $author )) ) {
 							$installed[ $template ] = $value;
 							unset( $install[ $key ] );
 						}
